@@ -1,48 +1,49 @@
+import styles from "./Drawer.module.scss";
 function Drawer() {
   return (
-    <div style={{ display: "none" }} className="overlay">
-      <div className="drawer">
+    <div style={{ display: "none" }} className={styles.overlay}>
+      <div className={styles.drawer}>
         <h2>
-          Корзина{" "}
+          Корзина
           <img
             className="cart-remove"
             src="/img/icons/button-remove.svg"
             alt="Remove"
           />
         </h2>
-        <div className="items">
-          <div className="cartItem">
+        <div className={styles.items}>
+          <div className={styles.cartItem}>
             <div
               style={{ backgroundImage: "url(/img/sneakers/1.jpg)" }}
-              className="cartItemImg"
+              className={styles.cartItemImg}
             ></div>
-            <div className="cart-info">
+            <div className={styles.cartinfo}>
               <p>Мужские Кроссовки Nike Air Max 270</p>
               <b>12 999 руб.</b>
             </div>
             <img
-              className="cart-remove"
+              className={styles.cartremove}
               src="/img/icons/button-remove.svg"
               alt="Remove"
             />
           </div>
-          <div className="cartItem">
+          <div className={styles.cartItem}>
             <div
               style={{ backgroundImage: "url(/img/sneakers/1.jpg)" }}
-              className="cartItemImg"
+              className={styles.cartItemImg}
             ></div>
-            <div className="cart-info">
+            <div className={styles.cartinfo}>
               <p>Мужские Кроссовки Nike Air Max 270</p>
               <b>12 999 руб.</b>
             </div>
             <img
-              className="cart-remove"
+              className={styles.cartremove}
               src="/img/icons/button-remove.svg"
               alt="Remove"
             />
           </div>
         </div>
-        <div className="total-block">
+        <div className={styles.totalblock}>
           <ul>
             <li>
               <span>Итого:</span>
@@ -55,7 +56,7 @@ function Drawer() {
               <b>1074 руб.</b>
             </li>
           </ul>
-          <button className="greenButton">
+          <button className={styles.greenButton}>
             Оформить заказ <img src="img/icons/arrow.svg" alt="arrow" />
           </button>
         </div>

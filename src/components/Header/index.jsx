@@ -1,7 +1,9 @@
+import styles from "./Header.module.scss";
+
 function Header() {
   return (
     <header>
-      <div className="headerLeft">
+      <div className={styles.headerLeft}>
         <img src="/img/logo.png" alt="Лого" width={40} height={40} />
         <div>
           <h3>React Sneakers</h3>
@@ -9,7 +11,7 @@ function Header() {
         </div>
       </div>
 
-      <ul className="headerRight">
+      <ul className={styles.headerRight}>
         <li>
           <svg
             width="20"
@@ -40,7 +42,6 @@ function Header() {
               strokeLinejoin="round"
             />
           </svg>
-
           <span>1205 руб.</span>
         </li>
         <li>
