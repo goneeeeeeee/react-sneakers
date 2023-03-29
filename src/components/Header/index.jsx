@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss";
 
-function Header() {
+function Header(props) {
   return (
     <header>
       <div className={styles.headerLeft}>
@@ -12,7 +12,7 @@ function Header() {
       </div>
 
       <ul className={styles.headerRight}>
-        <li>
+        <li onClick={props.onClickCard}>
           <svg
             width="20"
             height="20"

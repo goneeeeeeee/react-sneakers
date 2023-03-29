@@ -1,11 +1,12 @@
 import styles from "./Drawer.module.scss";
-function Drawer() {
+function Drawer(props) {
   return (
-    <div style={{ display: "none" }} className={styles.overlay}>
+    <div className={styles.overlay}>
       <div className={styles.drawer}>
         <h2>
           Корзина
           <img
+            onClick={props.onClickClose}
             className="cart-remove"
             src="/img/icons/button-remove.svg"
             alt="Remove"
