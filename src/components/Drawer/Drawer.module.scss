@@ -6,6 +6,7 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 1;
+  position: fixed;
 }
 
 .drawer {
@@ -129,5 +130,35 @@
   }
   &:active {
     background: darken($color: #9dd458, $amount: 5);
+  }
+}
+.cartEmpty {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .cartEmptyImg {
+    margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+  }
+  .greenButton {
+    position: relative;
+    border: none;
+
+    &:hover {
+      .arrowEmpty {
+        transform: translateX(10px);
+      }
+    }
+    .arrowEmpty {
+      position: absolute;
+      left: 35px;
+      top: 20px;
+      transform: rotate(180deg);
+      transition: transform 0.2s ease-in-out;
+    }
   }
 }
