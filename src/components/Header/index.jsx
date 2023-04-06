@@ -1,16 +1,18 @@
 import styles from "./Header.module.scss";
+import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
     <header>
-      <div className={styles.headerLeft}>
-        <img src="/img/logo.png" alt="Лого" width={40} height={40} />
-        <div>
-          <h3>React Sneakers</h3>
-          <p>Магазин лучших кроссвок</p>
+      <Link to="/">
+        <div className={styles.headerLeft}>
+          <img src="/img/logo.png" alt="Лого" width={40} height={40} />
+          <div>
+            <h3>React Sneakers</h3>
+            <p>Магазин лучших кроссвок</p>
+          </div>
         </div>
-      </div>
-
+      </Link>
       <ul className={styles.headerRight}>
         <li onClick={props.onClickCard}>
           <svg
@@ -43,6 +45,17 @@ function Header(props) {
             />
           </svg>
           <span>1205 руб.</span>
+        </li>
+        <li>
+          <Link to="/favorites">
+            {" "}
+            <img
+              width={18}
+              height={18}
+              src="img/icons/hearth-header.svg"
+              alt="hearth"
+            />
+          </Link>
         </li>
         <li>
           <svg
