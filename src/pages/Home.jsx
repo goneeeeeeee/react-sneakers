@@ -7,7 +7,23 @@ function Home({
   onChangeSearch,
   onAddFavorite,
   onAddToCart,
+  isLoading,
 }) {
+  const renderItems = () => {
+    return (
+      isLoading
+        ? [...Array(12)]
+        : items.filter((item) => item.title.toLowerCase().includes(searchValue))
+    ).map((item, index) => (
+      <Card
+        key={index}
+        onPlus={(obj) => onAddToCart(obj)}
+        onFavorite={(obj) => onAddFavorite(obj)}
+        loading={isLoading}
+        {...item}
+      />
+    ));
+  };
   return (
     <div className="content">
       <div className="all-sneakers">
@@ -31,18 +47,7 @@ function Home({
           />
         </div>
       </div>
-      <div className="sneakers">
-        {items
-          .filter((item) => item.title.toLowerCase().includes(searchValue))
-          .map((item, index) => (
-            <Card
-              key={index}
-              onPlus={(obj) => onAddToCart(obj)}
-              onFavorite={(obj) => onAddFavorite(obj)}
-              {...item}
-            />
-          ))}
-      </div>
+      <div className="sneakers">{renderItems()}</div>
     </div>
   );
 }

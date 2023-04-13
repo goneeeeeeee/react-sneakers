@@ -14,8 +14,8 @@ function Drawer({ onClickClose, items = [], onRemove }) {
         </h2>
         {items.length > 0 ? (
           <div className={styles.items}>
-            {items.map((obj, index__) => (
-              <div className={styles.cartItem}>
+            {items.map((obj) => (
+              <div key={obj.id} className={styles.cartItem}>
                 <div
                   style={{ backgroundImage: `url(${obj.imageUrl})` }}
                   className={styles.cartItemImg}
