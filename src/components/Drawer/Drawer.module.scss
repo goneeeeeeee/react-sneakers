@@ -21,7 +21,6 @@
   .items {
     flex: 1;
     overflow: auto;
-    margin-bottom: 40px;
   }
   h2 {
     display: flex;
@@ -139,6 +138,10 @@
   justify-content: center;
   flex-direction: column;
 
+  .cartText {
+    display: flex;
+    width: 370px;
+  }
   .cartEmptyImg {
     margin-bottom: 20px;
     width: 120px;
@@ -147,6 +150,7 @@
   .greenButton {
     position: relative;
     border: none;
+    margin-top: 30px;
 
     &:hover {
       .arrowEmpty {

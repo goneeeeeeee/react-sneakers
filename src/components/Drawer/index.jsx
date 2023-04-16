@@ -1,5 +1,9 @@
+import React from "react";
 import styles from "./Drawer.module.scss";
+import AppContext from "../../context";
 function Drawer({ onClickClose, items = [], onRemove }) {
+  const { cartItems, setCartItems } = React.useContext(AppContext);
+  const totalPrice = cartItems.reduce((sum, obj) => obj.price + sum, 0);
   return (
     <div className={styles.overlay}>
       <div className={styles.drawer}>
@@ -37,12 +41,12 @@ function Drawer({ onClickClose, items = [], onRemove }) {
                 <li>
                   <span>Итого:</span>
                   <div></div>
-                  <b>21 498 руб.</b>
+                  <b>{totalPrice}руб.</b>
                 </li>
                 <li>
                   <span>Налог 5%:</span>
                   <div></div>
-                  <b>1074 руб.</b>
+                  <b>{(totalPrice / 100) * 5}руб.</b>
                 </li>
               </ul>
               <button className={styles.greenButton}>
